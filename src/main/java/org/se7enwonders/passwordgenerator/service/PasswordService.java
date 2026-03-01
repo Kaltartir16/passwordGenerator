@@ -1,6 +1,5 @@
 package org.se7enwonders.passwordgenerator.service;
 
-import lombok.RequiredArgsConstructor;
 import org.se7enwonders.passwordgenerator.dto.PasswordModel;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +21,9 @@ public class PasswordService {
         addSpecials(chars, passwordModel.getNumberOfSpecialChars());
 
         Collections.shuffle(chars, secureRandom);
-        StringBuilder sb = new StringBuilder(chars.size());
-        for (char c : chars) sb.append(c);
-
-        return sb.toString();
+        StringBuilder stringBuilder = new StringBuilder(chars.size());
+        for (char c : chars) stringBuilder.append(c);
+        return stringBuilder.toString();
     }
 
     private void addLowercase(List<Character> out, int count) {
@@ -45,6 +43,7 @@ public class PasswordService {
             out.add(randomCharInRange('0', '9'));
         }
     }
+
     private void addSpecials(List<Character> out, int count) {
         for (int i = 0; i < count; i++) {
             out.add(randomSpecialAscii());
