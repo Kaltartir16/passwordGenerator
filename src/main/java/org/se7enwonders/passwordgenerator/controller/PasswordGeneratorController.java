@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.se7enwonders.passwordgenerator.dto.PasswordModel;
 import org.se7enwonders.passwordgenerator.resolver.ResolvePasswordModel;
 import org.se7enwonders.passwordgenerator.service.PasswordService;
+import org.se7enwonders.passwordgenerator.service.PasswordServiceImpl;
 import org.se7enwonders.passwordgenerator.validation.PasswordBusinessValidation;
 import org.se7enwonders.passwordgenerator.validation.PasswordTechnicalValidation;
 import org.springframework.http.HttpStatus;
